@@ -1,0 +1,38 @@
+// you can use single line comments in Sass!
+// (they'll be removed from the generated CSS)
+ 
+// variables
+$text-color: #222223;
+$light-blue: #a7eaf6;
+$dark-blue: #2c81d9;
+$content-padding: 2rem;
+ 
+// mixin for rounded corners
+@mixin rounded($radius: 6px) {
+  border-radius: $radius;
+}
+ 
+// mixin for transition
+@mixin transition {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+ 
+body {
+  background: $dark-blue;
+}
+ 
+a {
+  color: $dark-blue;
+  @include transition;
+}
+ 
+.wrapper {
+  padding: $content-padding;
+  color: $text-color;
+}
+ 
+.article {
+  padding: $content-padding;
+  @include rounded(4px);
+}
