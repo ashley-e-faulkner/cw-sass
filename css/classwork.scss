@@ -1,0 +1,140 @@
+$default-radius: 0.5rem;
+$auto-padding: 0.5rem 0.8rem;
+$aqua: #5fc8c2;
+$black: #000;
+$white: #fff;
+$copper: #d58544;
+$airplane: #c0d5d3;
+$slate: #7e7d79;
+$dark-aqua: #50aca7;
+$foam: #f2eee4;
+$cream: #f2ecdc;
+
+
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: $airplane;
+  font-family: Helvetica, Arial, sans-serif;
+  color: $black;
+}
+
+a {
+  color: $copper;
+  &.external {
+  color: $white;
+  background: $copper;
+  padding: $auto-padding;
+  border-radius: $default-radius;
+}
+}
+
+@mixin header-base{
+  text-align:center;
+}
+
+.h1 {
+  @include header-base;
+  font-size: 3rem;
+  font-family: "Julius Sans One", sans-serif;
+}
+
+.h2 {
+  @include header-base;
+  font-size: 2.4rem;
+  font-family: "Petit Formal Script", cursive;
+  color: $slate;
+}
+
+.nav {
+  text-align: center;
+  a {
+  background-color: $aqua;
+  color: $white;
+  padding: $auto-padding;
+  text-decoration: none;
+  border-radius: $default-radius;
+  -webkit-transition: background 0.2s ease;
+  transition: background 0.2s ease;
+  }
+  a:hover {
+  background: $dark-aqua;
+}
+}
+
+.container {
+  width: 80%;
+  padding: 5%;
+  margin: 0 auto 1rem auto;
+  font-size: 1.6rem;
+  line-height: 133%;
+  background: $white;
+  .header .h1 {
+  font-size: 2.2rem;
+  }
+  .header .h2 {
+  font-size: 1.8rem;
+  }
+  .img {
+  width: 35%;
+  float: right;
+  margin: 0 0 1.5rem 1.5rem;
+  border: 5px solid black;
+  max-width: 100%;
+  -webkit-transition: width 0.2s ease 0.2s;
+  transition: width 0.2s ease 0.2s;
+  }
+  .img:hover {
+  width: 50%;
+  margin: 0 0 2rem 2rem;
+}
+}
+
+.drink {
+  padding: 5rem 0;
+  border-bottom: 1px dotted $slate;
+  .header {
+  margin-bottom: 4rem;
+}
+}
+
+.text {
+  line-height: 150%;
+}
+
+@mixin margin-base{
+  margin:0;
+}
+
+.inline-list {
+  @include margin-base;
+  padding: 0;
+  .list-item {
+  display: inline;
+  margin: 0 0.5rem;
+}
+}
+
+.quote {
+@include margin-base;
+  background: $foam;
+  padding: 1rem;
+  color: $slate;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  &:hover {
+  color: $black;
+  background: $cream;
+  }
+  a {
+  color: $aqua;
+  }
+  &:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+}
